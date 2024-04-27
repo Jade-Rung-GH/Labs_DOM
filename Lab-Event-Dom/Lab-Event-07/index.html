@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- จงสร้าง Button มีข้อความว่า “Click to hide text”
+  เมื่อผู้ใช้ click button ให้ซ่อน Text -->
+
+</head>
+<body>
+  
+</body>
+  <script>
+
+    // Create Button
+    let button = document.createElement('button');
+    button.textContent = 'Click to Hide Text!'
+    document.body.append(button)
+
+    // Create Text
+    let text = document.createElement('h1')
+    text.textContent = 'TEXT'
+    document.body.append(text)
+
+    // Hide Text FN
+    function hideText() {
+      text.style.visibility = 'hidden'
+    }
+
+    // setTimeout
+    setTimeout( function() {
+      text.style.visibility = 'visible'
+    }, 3000)
+
+    // Add Event Listener
+    button.addEventListener('click', hideText)
+
+  </script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- #1 HTML Attribute -->
+  <!-- <form>
+  <button onclick="buttonClick(this)">Submit Form</button>
+  </form> -->
+
+  <!-- #2 DOM Property -->
+
+  
+</body>
+  <script>
+    //  <!-- #1 HTML Attribute -->
+    // function buttonClick(e) {
+    //   alert("Form is submitted.")
+    // }
+    // setTimeout ( function() {
+    // document.body.querySelector("button").onclick = null
+    // }, 3000 )
+
+    // <!-- #2 DOM Property -->
+    // Create Form
+    // let form = document.createElement('form')
+    // document.body.append(form)
+    // // Create Button
+    // let button = document.createElement('button');
+    // button.textContent = 'Submit Form'
+    // form.append(button)
+    // // onclick FN
+    // button.onclick = function submitForm() {
+    //   alert("Form is submitted.")
+    // }
+    // setTimeout ( function() {
+    //   button.onclick = null
+    // }, 3000)
+
+    // #3 Event Listener 
+    // Create Form
+    let form = document.createElement('form')
+    document.body.append(form)
+
+    // Create Button
+    let button = document.createElement('button');
+    button.textContent = 'Submit Form'
+    form.append(button)
+
+    // onclick FN
+    function onClick() {
+      alert("Form is submitted.")
+    }
+
+    // Event Listener
+    button.addEventListener('click', onClick)
+
+    // Time Out Event Listener
+    setTimeout ( function() {
+      button.removeEventListener("click", onClick)
+    }, 3000)
+
+  </script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .bgc {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  
+  <button class="btn">Submit</button>
+
+</body>
+  <script>
+
+    // 1st Method - Property Style of Element Object
+    // HOWEVER BAD CODING
+    const button = document.querySelector('button')
+
+    function redButton() {
+      button.style.backgroundColor = "red"
+    }
+    function defaultButton() {
+    button.style.backgroundColor = ""
+    }
+    
+    setInterval(redButton, 3000)
+    setInterval(defaultButton, 6000)
+
+    // 2nd Method - Add or Reduce Class
+    // const button = document.querySelector('button')
+
+    // function toggleRed() {
+    //   button.classList.toggle('bgc')
+    // }
+
+    // setInterval(toggleRed, 3000)
+
+
+  </script>
+</html>

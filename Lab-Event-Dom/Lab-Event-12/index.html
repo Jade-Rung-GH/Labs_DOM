@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="add">Add</button>
+    <div id="space">
+    </div>
+    <script>
+      // Element can be directly accessed by Browser
+      // No need to prior create Element
+      // Only create when clicked Add
+      const addBtn = document.getElementById("add")
+      const editBtn = document.getElementsByClassName("edit")
+      const delBtn = document.getElementsByClassName("del")
+      const space = document.getElementById("space")
+      const span = document.getElementsByTagName("span")
+      // Count for Task
+      let count = 0;
+
+      // Easy to Complicated
+      // Del- Parent is Empty
+        const delTask = () => {
+            event.target.parentElement.outerHTML = ""
+            count = count - 1
+        }
+
+        const editTask = (event) => {
+            let newTask = prompt("Modify your Task: ")
+            event.target.previousElementSibling.innerHTML = newTask
+        }
+
+        const addTask = () => {
+            let list = document.createElement("div")
+            list.innerHTML = `<span>Task ${count}</span>
+            <button class="edit">Edit</button>
+            <button class="del">Del</button>`
+            list.id = count
+            space.append(list)
+            editBtn[count].addEventListener("click", editTask)
+            delBtn[count].addEventListener("click", delTask)
+            count = count + 1
+        }
+        
+        addBtn.addEventListener("click", addTask)
+    </script>
+</body>
+
+</html>

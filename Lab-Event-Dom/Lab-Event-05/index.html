@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+  <!-- จงสร้าง <input> และมี attribute ชื่อ name มีค่าเท่ากับ “nickname”
+  จงสร้าง <input> อีกอันให้มี attribute ชื่อ name มีค่าเท่ากับ “job”
+  เมื่อผู้ใช้ click ที่ <input> ให้ console.log ค่า attribute name ของ <input>
+  เมื่อผู้ใช้พิมพ์ค่าลงใน <input> ให้ console.log ค่าที่ผู้ใช้พิมพ์
+  Hint: event.target และ oninput event -->
+
+</head>
+<body>
+
+  <!-- <input name = "nickname"> -->
+  
+</body>
+  <script>
+    // Input 1
+    let input1 = document.createElement("input")
+    input1.setAttribute("name","nickname")
+    document.body.append(input1)
+
+    // Input 2
+    let input2 = document.createElement("input")
+    input2.setAttribute("name","job")
+    document.body.append(input2)
+
+    // onclick FN
+    function clickInput(e) {
+      console.log(this.name)
+    }
+
+    // Event Listener Click
+    input1.addEventListener('click', clickInput)
+    input2.addEventListener('click', clickInput)
+
+    // Event Listener Input Characters and FN
+    input1.addEventListener('input', function(e) {
+      let currentValue = event.target.value
+      console.log(currentValue)
+    })
+    input2.addEventListener('input', function(e) {
+      let currentValue = event.target.value
+      console.log(currentValue)
+    })
+  </script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- จงสร้าง Form ที่มี Button สำหรับ submit form และเขียนคำสั่งเพื่อยกเลิกการส่ง request ไปที่ server เมื่อผู้ใช้งานกด submit form -->
+</head>
+<body>
+  
+
+</body>
+  <script>
+    // Create Form
+    let form = document.createElement('form')
+    document.body.append(form)
+    form.setAttribute('action', 'https://google.com/formsEX')
+
+    // Create Button
+    let button = document.createElement('button');
+    button.textContent = 'Submit Form'
+    form.append(button)
+
+    // prevent Default
+    function noSubmit(e) {
+      e.preventDefault()
+    }
+    // Event Listener for Submit
+    form.addEventListener('submit', noSubmit);
+
+
+  </script>
+</html>

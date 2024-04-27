@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ol id="elem">
+    <li>Hello</li>
+    <li>World</li>
+  </ol>
+  
+</body>
+  <script>
+    function clear(elem) { 
+      const li1 = document.body.querySelector('li')
+      const li2 = document.body.querySelector('li').nextElementSibling
+      li1.remove()
+      li2.remove()
+      // const secondLi = document.body.ol.querySelector('li').nextElementSibling
+      // firstLi.remove()
+      // secondLi.remove()
+     }
+    clear(elem); // clears the list
+  </script>
+</html>

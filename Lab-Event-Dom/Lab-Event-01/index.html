@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+  <script>
+    let button = document.createElement('button');
+    button.textContent = 'button'
+    document.body.append(button)
+    button.addEventListener('click', () => alert('1'));  // (1) Can Work
+    button.removeEventListener('click', () => alert('1')); // (2) Cannot Work
+    button.onclick = () => alert(2); // (3) Can Work
+  </script>
+</html>

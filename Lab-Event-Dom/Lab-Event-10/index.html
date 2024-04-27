@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- จงสร้าง Label และ Select ดังรูป
+  เมื่อ click <select> ของ Province ให้แสดงรายชื่อจังหวัด
+  เมื่อ click <select> ของ District ให้แสดงอำเภอของจังหวัดที่ถูกเลือก -->
+
+</head>
+<body>
+  <label for="province">Province :</label>
+    <select id="province" name="province">
+        <option value="Select" selected hidden>Select</option>
+        <option value="bangkok">Bangkok</option>
+        <option value="chonburi">Chonburi</option>
+        <option value="surin">Surin</option>
+        <option value="phuket">Phuket</option>
+    </select>
+    <br>
+    <br>
+    <label for="district">District :</label>
+    <select id="district" name="district">
+        <option value="Select" selected hidden>Select</option>
+    </select>
+  
+</body>
+  
+    <script>
+      // Select Tag
+        const province = document.getElementById("province")
+        const district = document.getElementById("district")
+
+      // Create empty array to accept data
+        let data = []
+
+      // Create FN
+        const choseProvince = (event) => {
+            district.innerHTML = '<option value="Select" selected="" hidden="">Select</option>'
+            switch (event.target.value) {
+                case "bangkok":
+                    const bangkok = ["Pathumwan", "Phaya Thai", "Samsen Nai", "Bangkapi", "Buengkum", "Saphan Sung", "Bang Na", "Bang Trad", "Khlong Toey"]
+                    data = bangkok
+                    break;
+                case "chonburi":
+                    const chonburi = ["Mueng", "Rayong", "Si Racha", "Chachoengsao", "Chanthaburi"]
+                    data = chonburi
+                    break;
+                case "surin":
+                    const surin = ["Mueng", "Buriram", "Sri Sa Ket", "Nakon Ratchasrima", "Chom Phra"]
+                    data = surin
+                    break;
+                case "phuket":
+                    const phuket = ["Mueng", "Talat Yai", "Talat Nuea", "Ko Kaeo"]
+                    data = phuket
+                    break;
+            }
+          // Create Loop for District Options
+            for (let i of data) {
+                let list = document.createElement("option")
+                list.innerHTML = i
+                list.value = i
+                district.append(list);
+            }
+        }
+
+        // Add Event Listener
+        province.addEventListener("change", choseProvince)
+        
+        // // Create Label 1
+        // let label1 = document.createElement('label');
+        // label1.textContent = 'Province : '
+        // document.body.append(label1)
+        // label1.style.display = 'flex'
+        
+        // // Create Select 1
+        // let select1 = document.createElement('select')
+        // label1.append(select1)
+        // select1.style.marginLeft = '0.3em'
+        
+        // // Create Label 2
+        // let label2 = document.createElement('label');
+        // label2.textContent = 'District : '
+        // document.body.append(label2)
+        
+        // // Create Select 2
+        // let select2 = document.createElement('select')
+        // label2.append(select2)
+    </script>
+        
+  
+</html>

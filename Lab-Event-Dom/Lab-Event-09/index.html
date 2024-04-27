@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<!-- จงสร้าง Input และ Button ดังรูปเมื่อผู้ใช้กรอกเบอร์โทรและกด Check
+ถ้าผู้ใช้ไม่กรอกให้ขึ้นข้อความ Phone Number is required
+ถ้าผู้ใช้กรอกค่าที่ไม่ใช่ตัวเลขให้ขึ้นข้อความ Phone Number is invalid
+ถ้าผู้ใช้กรอกค่าที่มีความยาวไม่เท่ากับ 10 ให้ขึ้นข้อความ Invalid length
+ถ้ากรอกถูกต้องให้ Alert “Your number is valid” -->
+
+</head>
+<body>
+  
+</body>
+  <script>
+    // Create Input
+    let input = document.createElement("input")
+    input.placeholder = "Enter Phone Number"
+    document.body.append(input)
+
+    // Create Var for Input Value ** Cannot put here because if so it will always be Empty String
+    // let currentValue = input.value
+
+    // Create Button
+    let button = document.createElement('button');
+    button.textContent = 'Check!'
+    document.body.append(button)
+
+    // Check FN
+    function checkPhone() {
+      let currentValue = input.value // Put here so it will have value only when the button is clicked!
+      if (currentValue.trim() == '') {
+        alert('Phone Number is required!')
+      } else if (isNaN(currentValue) == true) {
+        alert('Phone Number is invalid!')
+      } else if (currentValue.length !== 10) {
+        alert('Invalid Length!')
+      } else alert('Your number is valid!')
+    }
+
+    // Add Event Listener
+    button.addEventListener('click', checkPhone)
+
+
+  </script>
+</html>

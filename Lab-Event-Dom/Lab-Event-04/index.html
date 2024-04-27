@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- จงสร้างลิงค์ <a> Tag มีข้อความว่า “Google”
+    เมื่อผู้ใช้ click link ให้ขึ้นคำถามว่า “Leave for https://google.com?”
+    ถ้าผู้ใช้กด OK ให้ redirect ไปที่ https://google.com
+    ถ้าผู้ใช้กด Cancel ให้ยกเลิก redirect ไปที่ https://google.com
+     -->
+</head>
+<body>
+  
+</body>
+  <script>
+    // Create and Insert Element Anchor
+    let anchor = document.createElement('a')
+    anchor.textContent = "Google"
+    anchor.setAttribute('href', 'https://google.com')
+    document.body.append(anchor)
+
+    // Confirm FN
+    function goOrNo(e) {
+      e.preventDefault()
+      let confirmation = confirm("Leave for https://google.com?")
+
+      if (confirmation) {
+        alert('Redirecting to your destination...')
+        location.href = event.target.href
+      } else {
+        alert('Canceled by user.')
+      }
+    }
+    
+    // Add Event Listener
+    anchor.addEventListener("click", goOrNo)
+
+  </script>
+</html>
